@@ -1,0 +1,84 @@
+# neovim-setup
+
+A futuristic, transparent LazyVim setup for macOS + WezTerm.
+
+**Visual direction:** dark glass, restrained cyan/violet accents, readable code, subtle motion and a clean dashboard.
+
+## What this repository contains
+
+- LazyVim plugin specifications under `lua/plugins/`
+- Catppuccin Mocha with transparent editor and floating windows
+- A custom Snacks dashboard
+- A focused statusline and Git workflow
+- WezTerm appearance configuration in `wezterm/`
+
+This repository is an **overlay for an existing LazyVim installation**. It deliberately does not replace your `init.lua`, LazyVim bootstrap, or existing user data.
+
+## Requirements
+
+- Neovim 0.10+
+- An existing LazyVim installation
+- Git
+- WezTerm (optional, for the terminal appearance)
+- A Nerd Font (recommended; JetBrainsMono Nerd Font works well)
+
+## Install
+
+Back up your current config first:
+
+```sh
+cp -R ~/.config/nvim ~/.config/nvim.backup
+```
+
+Clone this repository:
+
+```sh
+git clone https://github.com/Andrewplaez/neovim-setup.git ~/neovim-setup
+```
+
+Copy the plugin specifications into your LazyVim config:
+
+```sh
+mkdir -p ~/.config/nvim/lua/plugins
+cp -R ~/neovim-setup/lua/plugins/. ~/.config/nvim/lua/plugins/
+```
+
+Start Neovim and run:
+
+```vim
+:Lazy sync
+```
+
+Then restart Neovim.
+
+> Existing files with the same names will be overwritten by the copy command. Back up first, and inspect your current plugin files if you have edits you want to keep.
+
+## WezTerm
+
+The optional WezTerm configuration is a **snippet**, not a replacement for your whole `~/.wezterm.lua`.
+
+Open `wezterm/appearance.lua` and merge its settings into your existing WezTerm config. Do not blindly replace a working WezTerm config.
+
+The terminal background can be transparent while Neovim's editor and floating windows are also transparent. The background itself is rendered by WezTerm, not Neovim.
+
+## Customize
+
+- Theme and transparency: `lua/plugins/colorscheme.lua`
+- Dashboard: `lua/plugins/dashboard.lua`
+- Statusline: `lua/plugins/statusline.lua`
+- Editor UX: `lua/plugins/editor.lua`
+- Git: `lua/plugins/git.lua`
+- Coding tools: `lua/plugins/coding.lua`
+- Explorer: `lua/plugins/explorer.lua`
+- Terminal: `lua/plugins/terminal.lua`
+
+## Design principles
+
+- Keep code contrast high; transparency should not reduce readability.
+- Prefer LazyVim's bundled plugins over installing duplicates.
+- Keep plugin specs small and separated by responsibility.
+- Treat WezTerm as the background renderer and Neovim as the editor UI.
+
+## License
+
+MIT
