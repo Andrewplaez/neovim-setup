@@ -31,7 +31,7 @@ return {
       },
     },
     keys = {
-      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
+      { "<leader>gG", "<cmd>Neogit<cr>", desc = "Open Neogit" },
     },
   },
 }
