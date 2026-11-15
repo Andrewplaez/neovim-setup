@@ -4,7 +4,6 @@ return {
     opts = {
       options = {
         theme = "catppuccin",
-        globalstatus = true,
         component_separators = {
           left = "│",
           right = "│",
