@@ -1,8 +1,21 @@
 return {
   {
     "folke/snacks.nvim",
-    opts = {
-      dashboard = {
+    opts = function(_, opts)
+      local quotes = {
+        "The abyss does not answer. It waits.",
+        "Become difficult to predict.",
+        "Nothing grows in the comfort of certainty.",
+        "The only way out is through.",
+        "Discipline is choosing what you want most.",
+        "In the dark, learn to see.",
+        "Make something worth fearing.",
+        "There is no map for the unmade.",
+        "A quiet mind. A ruthless standard.",
+        "The world yields to those who persist.",
+      }
+
+      opts.dashboard = {
         enabled = true,
         preset = {
           header = [[
@@ -51,6 +64,9 @@ return {
           { section = "startup", padding = 1 },
         },
       },
-    },
+      opts.dashboard.preset.header = opts.dashboard.preset.header .. "\n\n" .. quotes[math.random(#quotes)]
+
+      return opts
+    end,
   },
 }
