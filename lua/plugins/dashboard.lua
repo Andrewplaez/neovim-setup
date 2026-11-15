@@ -63,7 +63,7 @@ return {
           },
           { section = "startup", padding = 1 },
         },
-      },
+      }
       opts.dashboard.preset.header = opts.dashboard.preset.header .. "\n\n" .. quotes[math.random(#quotes)]
 
       return opts
