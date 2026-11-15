@@ -5,6 +5,19 @@ config.window_background_opacity = 0.88
 config.macos_window_background_blur = 18
 config.text_background_opacity = 1.0
 
+-- Subtle radial indigo/cyan atmosphere behind the transparent editor.
+config.window_background_gradient = {
+  colors = { "#070b16", "#10172a", "#1a1630" },
+  orientation = {
+    Radial = {
+      cx = 0.78,
+      cy = 0.18,
+      radius = 1.35,
+    },
+  },
+  blend = "Oklab",
+}
+
 config.window_padding = {
   left = 14,
   right = 14,
